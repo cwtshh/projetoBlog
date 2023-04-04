@@ -82,7 +82,7 @@ const Register = () => {
         </label>
 
         <label>
-          <span>Senha:</span>
+          <span>Confirmar senha:</span>
           <input 
             type='password' 
             name='confirmPassword' 

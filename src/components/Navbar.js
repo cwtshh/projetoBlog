@@ -8,11 +8,32 @@ const Navbar = () => {
     const { logout } = useAuthentication();
 
 
+
   return (
     <nav className={styles.navbar}>
+
+        {user ? (
+            <p style={{textAlign: 'left'}} >
+            Bem vindo ao <NavLink to='/' className={styles.brand}> cwtsh <span>Blog, </span></NavLink> 
+            
+            {user.email}!
+ 
+            </p>
+        ) : (
+            <NavLink to='/' className={styles.brand}> cwtsh <span>Blog </span></NavLink>
+        )}
+
+
+{/* 
         <NavLink to='/' className={styles.brand}>
             Mini <span>Blog</span>
         </NavLink>
+
+        <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <p style={{textAlign: 'left'}} >Bem vindo, {user.email}!</p>
+        </div>
+ */}
+        
 
         <ul className={styles.links_list}>
             <li>
@@ -45,11 +66,11 @@ const Navbar = () => {
                         </NavLink>
                     </li>
 
-                    <li>
+                    {/* <li>
                         <NavLink to='/dashboard' className={({isActive}) => (isActive ? styles.active : '') } >
                             DashBoard
                         </NavLink>
-                    </li>
+                    </li> */}
                 </> 
             )}
 
@@ -63,7 +84,7 @@ const Navbar = () => {
 
             {user && (
                 <li>
-                    <button onClick={logout}>Sair</button>
+                    <button onClick={logout} className={styles.isActive}>Sair</button>
                 </li>
             )}
 

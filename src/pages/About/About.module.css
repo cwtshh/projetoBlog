@@ -9,8 +9,14 @@
     margin-bottom: 2em;
 }
 
-.about a {
-    display: block;
-    margin-top: 15px;
-    padding: 10px 15px;
+
+.new_post_btn {
+    border: 1px solid black;
+    padding: 15px;
+    background-color: black;
+    width: 70px;
+    color: white;
+}
+.new_post a {
+    text-align: center;
 }

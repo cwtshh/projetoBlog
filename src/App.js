@@ -20,10 +20,12 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import CreatePost from './pages/CreatePost/CreatePost';
 import Dashboard from './pages/Dashboard/Dashboard';
+import Search from './pages/Search/Search';
+import Post from './pages/Post/Post';
 
 function App() {
 
-  const[ user, setUser] = useState(undefined);
+  const[ user, setUser ] = useState(undefined);
   const {auth} = useAuthentication();
 
   const loadingUser = user === undefined;
@@ -55,7 +57,10 @@ function App() {
               <Route path='/register' element={!user ? <Register /> : <Navigate to='/' />} />
               <Route path='/posts/create' element={user ? <CreatePost /> : <Navigate to='/login' />} />
               <Route path='/dashboard' element={user ? <Dashboard /> : <Navigate to='/login' />} />
-              
+              <Route path='/search' element={<Search />} />
+              <Route path='/posts/:id' element={<Post />} />
+            
+            
             </Routes>
           </div>
 

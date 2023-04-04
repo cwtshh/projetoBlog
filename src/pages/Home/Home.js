@@ -12,12 +12,22 @@ import PostDetail from "../../components/PostDetail";
 
 const Home = () => {
 
-  const [querry, setQuerry] = useState('');
+  const [query, setQuery] = useState('');
   const {documents: posts, loading} = useFetchDocuments("posts");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  }
+
+    if(query) {
+
+      return navigate(`/search?q=${query}`);
+
+    }
+
+
+  };
 
   return (
     <div className={styles.home}>
@@ -27,8 +37,8 @@ const Home = () => {
           <input 
             type='text' 
             placeholder="Procure por Posts ou tags" 
-            onChange={(e) => setQuerry(e.target.value)}
-            style={{width:500}}
+            onChange={(e) => setQuery(e.target.value)}
+            style={{width:300}}
           
           />
           <button className={styles.btn_search}>Pesquisar</button>

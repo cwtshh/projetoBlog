@@ -11,9 +11,11 @@ const About = () => {
           backend. 
         </p>
 
-        <Link to='/posts/create' className='btn'>
-        Criar post
-        </Link>
+        <div className={styles.new_post}>
+          <Link to='/posts/create' className={styles.new_post_btn}>
+            Criar post
+          </Link>
+        </div>
 
     </div>
   )
